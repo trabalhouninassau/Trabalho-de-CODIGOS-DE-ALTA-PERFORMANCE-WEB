@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Campeonato</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  
+  <header class="site-header">
+    <div class="header-badge">⚽ AO VIVO</div>
+    <h1 class="site-title">Simulador de<br/><span>Campeonato</span></h1>
+    <p class="site-sub">Dois times. Cinco partidas. Um campeão.</p>
+
+    <button id="btn-simular" class="btn-primary" onclick="iniciarSimulacao()">
+      <span class="btn-icon">▶</span> Simular Campeonato
+    </button>
+  </header>
+
+  <main class="container">
+
+    
+    <section class="section-times" id="section-times" aria-label="Placar dos times">
+      <div class="team-card" id="card-casa">
+        <div class="team-escudo">🔴</div>
+        <div class="team-nome" id="nome-casa">Flamengo</div>
+        <div class="team-stats-row">
+          <div class="stat-mini"><span id="pts-casa">–</span><label>PTS</label></div>
+          <div class="stat-mini"><span id="gm-casa">–</span><label>GM</label></div>
+          <div class="stat-mini"><span id="gs-casa">–</span><label>GS</label></div>
+          <div class="stat-mini"><span id="sg-casa">–</span><label>SG</label></div>
+        </div>
+        <div class="team-cartoes">
+          <span class="cartao amarelo" id="am-casa">🟨 –</span>
+          <span class="cartao vermelho" id="vm-casa">🟥 –</span>
+        </div>
+      </div>
+
+      <div class="vs-badge">VS</div>
+
+      <div class="team-card" id="card-visit">
+        <div class="team-escudo">⚫</div>
+        <div class="team-nome" id="nome-visit">Corinthians</div>
+        <div class="team-stats-row">
+          <div class="stat-mini"><span id="pts-visit">–</span><label>PTS</label></div>
+          <div class="stat-mini"><span id="gm-visit">–</span><label>GM</label></div>
+          <div class="stat-mini"><span id="gs-visit">–</span><label>GS</label></div>
+          <div class="stat-mini"><span id="sg-visit">–</span><label>SG</label></div>
+        </div>
+        <div class="team-cartoes">
+          <span class="cartao amarelo" id="am-visit">🟨 –</span>
+          <span class="cartao vermelho" id="vm-visit">🟥 –</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section-partidas" aria-label="Histórico de partidas">
+      <h2 class="section-title">Partidas</h2>
+      <div id="feed-partidas" class="feed-partidas">
+        <div class="feed-placeholder">Clique em <strong>Simular Campeonato</strong> para começar.</div>
+      </div>
+    </section>
+
+    
+    <section class="section-tabela" aria-label="Tabela de classificação">
+      <h2 class="section-title">Classificação Final</h2>
+      <div class="tabela-wrap">
+        <table id="tabela" class="tabela">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Time</th>
+              <th>Pts</th>
+              <th>GM</th>
+              <th>GS</th>
+              <th>SG</th>
+              <th>🟨</th>
+              <th>🟥</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-body">
+            <tr class="tabela-vazia">
+              <td colspan="8">Nenhuma simulação realizada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    
+    <section id="banner-campeao" class="banner-campeao hidden" aria-live="polite">
+      <div class="campeao-inner">
+        <div class="campeao-troféu">🏆</div>
+        <div class="campeao-label">Campeão do Torneio</div>
+        <div class="campeao-nome" id="campeao-nome">–</div>
+        <div class="campeao-sub" id="campeao-sub">–</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    Simulador de Campeonato · JavaScript Puro · Sem frameworks
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
